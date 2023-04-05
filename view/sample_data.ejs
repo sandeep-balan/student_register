@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Lists</title>
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        *{
+            padding: 0;
+            margin:0;
+        }
+        table,th,td{
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 7px;
+        }
+        .table_data{
+            display:flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="table_data">
+        <table>
+            <tr>
+                <th>First Name</th>
+                <th>Second Name</th>
+                <th>Email Address</th>
+                <th>Date Of Birth</th>
+                <th>Gender</th>
+                <th>Address 1</th>
+                <th>Address 2</th>
+                <th>City</th>
+                <th>Zipcode</th>
+                <th>Country</th>
+            </tr>
+            <tr>
+            <% si.forEach((s)=>{ %>
+            <td><%= s.firstname%></td>
+            <td><%= s.lastname%></td>
+            <td><%= s.email%></td>
+            <td><%= s.dob%></td>
+            <td><%= s.gender%></td>
+            <td><%= s.address1%></td>
+            <td><%= s.address2%></td>
+            <td><%= s.city%></td>
+            <td><%= s.zipcode%></td>
+            <td><%= s.country%></td>
+        </tr>
+        <% }); %></table>
+    </div>
+</body>
+</html>
+

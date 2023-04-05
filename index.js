@@ -15,7 +15,7 @@ app.post("/",(req,res)=>{
     // res.send(req.body);
     console.log(req.body);
     var sql = "INSERT INTO details (firstname,lastname, email,dob,gender,address1,address2,city,zipcode,country) values (?,?,?,?,?,?,?,?,?,?)";
-    db.query(sql,[d.firstname,d.lastname,d.email,d.dob,d.gender,d.Address_Line_1,d.Address_Line_2,d.city,d.zipcode,d.country],(err,data)=>{
+    db.query(sql,[d.firstname,d.lastname,d.email,d.dob,d.gender,d.Address_Line_1,d.Address_Line_2,d.City,d.Zipcode,d.Country],(err,data)=>{
         if(err) throw err;
         
         console.log("Updated successfully");
@@ -38,3 +38,18 @@ app.use(express.static(__dirname));
 app.listen(3000,(req,res)=>{
     console.log("Connected in port 3000 in http://localhost:3000");
 });
+
+/*
+create table details(
+ id int primary key not null auto_increment,
+ firstname varchar(50) default null,
+ lastname varchar(50) default null,
+ email varchar(50) default null,
+ dob date default null,
+ gender varchar(50) default null,
+ address1 varchar(50) default null,
+ address2 varchar(50) default null,
+ city varchar(50) default null,
+ zipcode int default null,
+ country varchar(50) default null);
+*/
